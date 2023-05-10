@@ -1,7 +1,7 @@
-import { getVenues, getBands, getBookings } from './database.js';
+import { getBands, getBookings, getVenues } from './database.js';
 
-const venuesList = getVenues();
 const bandsList = getBands();
+const venuesList = getVenues();
 const bookingsList = getBookings();
 
 // Function whose responsibility is to find the band for an booking
@@ -53,9 +53,8 @@ export const Venues = () => {
   let html = '<ul>';
 
   for (const venue of venuesList) {
-    html += `<li data-type="venue"
-                     data-id="${venue.id}">
-                        ${venue.name}
+    html += `<li data-type="venue" data-id="${venue.id}">
+                ${venue.name}
                 </li>`;
   }
 
